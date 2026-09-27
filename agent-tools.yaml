@@ -1,0 +1,58 @@
+# Tools the personal agent harness may call for this project. Draft, from
+# README.md and `langvoice --help` as of 2026-09-27. Format: see the header of
+# ~/projects/hub/agent-tools.yaml.
+
+version: 1
+project: langvoice
+cwd: ~/projects/langvoice
+docs: [README.md]
+
+x-prefixes:
+  langvoice: &langvoice [uv, run, langvoice]
+
+tools:
+  - name: langvoice_check
+    description: Verify this machine can render speech, without downloading anything.
+    command: [*langvoice, check]
+    risk: read
+    where: local
+
+  - name: langvoice_voices
+    description: List an engine's voices for a locale.
+    command: [*langvoice, voices, --engine, "{engine}", --locale, "{locale}"]
+    args:
+      engine: {type: str, default: azure, positional: true}
+      locale: {type: str, default: sv-SE, positional: true}
+    risk: read
+    where: local
+
+  - name: langvoice_make
+    description: >-
+      Render sentences into clip pairs (a .txt of one sentence per line, or a
+      .jsonl with expression fields). Lines already rendered are skipped.
+      Check the output with langprep_verify and langprep_review_page.
+    command: [*langvoice, make, "{source}"]
+    args:
+      source: {type: path, positional: true}
+      engine: {type: str, flag: --engine, description: "default chatterbox; azure is the chosen natural-sounding one"}
+      voice: {type: str, flag: --voice}
+      out: {type: path, flag: --out, description: default ~/Downloads/lang-clips-tts}
+      limit: {type: int, flag: --limit}
+    risk: write
+    where: local
+    # Chatterbox runs on the GPU; Azure doesn't, but sharing the lock is cheap.
+    resources: [gpu]
+    timeout: 3600
+
+  - name: langvoice_tests
+    description: Run the unit tests.
+    command: [uv, run, pytest, -q]
+    risk: read
+    where: local
+    timeout: 600
+
+excluded:
+  - command: langvoice make --private
+    reason: >-
+      For a voice from someone who did not consent, local tests only. Whose
+      voice may be used is a person's decision, not a model's.

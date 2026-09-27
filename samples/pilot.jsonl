@@ -1,0 +1,22 @@
+# Pilot set for judging Chatterbox v3 Swedish. A1 → B2, names, numbers,
+# slowed lines, pauses and emotions. The same sentences return in the M3 bench.
+{"text": "Hej! Jag heter Anna.", "focus": ["heter"], "translation": "Hi! My name is Anna."}
+{"text": "Var bor du?", "translation": "Where do you live?"}
+{"text": "Jag bor i Göteborg med min familj.", "translation": "I live in Gothenburg with my family."}
+{"text": "Kan jag få en kopp kaffe, tack?", "focus": ["få"], "translation": "Can I have a cup of coffee, please?"}
+{"text": "Tåget går klockan halv åtta.", "focus": ["halv åtta"], "translation": "The train leaves at half past seven."}
+{"text": "Det kostar tvåhundrafemtio kronor.", "translation": "It costs two hundred and fifty kronor."}
+{"text": "Jag har inte ätit frukost än.", "focus": ["inte … än"], "translation": "I haven't had breakfast yet."}
+{"text": "Vi ses på fredag!", "expression": {"emotion": "lively"}, "translation": "See you on Friday!"}
+{"text": "Kan du prata lite långsammare?", "expression": {"rate": 0.85}, "translation": "Can you speak a little slower?"}
+{"text": "Ursäkta, | var ligger järnvägsstationen?", "expression": {"pause_ms": 500}, "translation": "Excuse me, where is the railway station?"}
+{"text": "Erik och Sofia flyttade till Uppsala förra året.", "translation": "Erik and Sofia moved to Uppsala last year."}
+{"text": "Jag skulle vilja boka ett bord för fyra personer.", "focus": ["skulle vilja"], "translation": "I would like to book a table for four."}
+{"text": "Det regnar hela tiden, men jag tycker ändå om hösten.", "focus": ["ändå"], "translation": "It rains all the time, but I still like autumn."}
+{"text": "Hon blev jätteglad när hon fick jobbet.", "expression": {"emotion": "intense"}, "translation": "She was overjoyed when she got the job."}
+{"text": "Om du hade frågat mig tidigare hade jag kunnat hjälpa dig.", "focus": ["hade kunnat"], "translation": "If you had asked me earlier I could have helped you."}
+{"text": "Sju sjösjuka sjömän sköttes av sju sköna sjuksköterskor.", "expression": {"rate": 0.85}, "translation": "Seven seasick sailors were cared for by seven beautiful nurses."}
+{"text": "Mötet har flyttats till den tjugotredje oktober.", "translation": "The meeting has been moved to the twenty-third of October."}
+{"text": "Trots att det var sent | fortsatte diskussionen i flera timmar.", "focus": ["trots att"], "translation": "Although it was late, the discussion went on for several hours."}
+{"text": "Jag är lite trött idag, så jag stannar hemma.", "expression": {"emotion": "calm"}, "translation": "I'm a bit tired today, so I'm staying home."}
+{"text": "Regeringen presenterade i går ett nytt förslag om bostadspolitiken.", "translation": "Yesterday the government presented a new proposal on housing policy."}
