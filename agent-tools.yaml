@@ -6,6 +6,9 @@ version: 1
 project: langvoice
 cwd: ~/projects/langvoice
 docs: [README.md]
+# typer CLIs: `--help` only prints, so the drift check may ask it.
+help_prefix:
+  - [uv, run, langvoice]
 
 x-prefixes:
   langvoice: &langvoice [uv, run, langvoice]
